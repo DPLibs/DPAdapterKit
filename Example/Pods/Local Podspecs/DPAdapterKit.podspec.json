@@ -1,9 +1,9 @@
 {
   "name": "DPAdapterKit",
-  "version": "0.1.0",
-  "summary": "A short description of DPAdapterKit.",
-  "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/Dmitriy Polyakov/DPAdapterKit",
+  "version": "1.0.0",
+  "summary": "DP Adapter Kit",
+  "description": "A set of useful utilities",
+  "homepage": "https://github.com/DPLibs/DPAdapterKit",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
@@ -12,11 +12,18 @@
     "Dmitriy Polyakov": "dmitriyap11@gmail.com"
   },
   "source": {
-    "git": "https://github.com/Dmitriy Polyakov/DPAdapterKit.git",
-    "tag": "0.1.0"
+    "git": "https://github.com/DPLibs/DPAdapterKit.git",
+    "tag": "1.0.0"
   },
   "platforms": {
-    "ios": "8.0"
+    "ios": "11.0"
   },
-  "source_files": "DPAdapterKit/Classes/**/*"
+  "source_files": "DPAdapterKit/**/*",
+  "swift_versions": "5.0",
+  "dependencies": {
+    "DPLibrary": [
+
+    ]
+  },
+  "swift_version": "5.0"
 }

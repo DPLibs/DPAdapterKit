@@ -6,6 +6,7 @@ target 'DPAdapterKit_Example' do
   target 'DPAdapterKit_Tests' do
     inherit! :search_paths
 
+    pod 'DPLibrary'
     
   end
 end
