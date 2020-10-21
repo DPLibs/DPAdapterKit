@@ -1,6 +1,5 @@
 # DPAdapterKit
 
-[![CI Status](https://img.shields.io/travis/Dmitriy Polyakov/DPAdapterKit.svg?style=flat)](https://travis-ci.org/Dmitriy Polyakov/DPAdapterKit)
 [![Version](https://img.shields.io/cocoapods/v/DPAdapterKit.svg?style=flat)](https://cocoapods.org/pods/DPAdapterKit)
 [![License](https://img.shields.io/cocoapods/l/DPAdapterKit.svg?style=flat)](https://cocoapods.org/pods/DPAdapterKit)
 [![Platform](https://img.shields.io/cocoapods/p/DPAdapterKit.svg?style=flat)](https://cocoapods.org/pods/DPAdapterKit)
