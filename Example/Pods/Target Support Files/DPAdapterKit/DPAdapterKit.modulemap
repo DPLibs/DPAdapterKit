@@ -1,0 +1,6 @@
+framework module DPAdapterKit {
+  umbrella header "DPAdapterKit-umbrella.h"
+
+  export *
+  module * { export * }
+}

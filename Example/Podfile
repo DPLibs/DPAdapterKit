@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'DPAdapterKit_Example' do
+  pod 'DPAdapterKit', :path => '../'
+
+  target 'DPAdapterKit_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end

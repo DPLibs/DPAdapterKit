@@ -1,0 +1,16 @@
+PODS:
+  - DPAdapterKit (0.1.0)
+
+DEPENDENCIES:
+  - DPAdapterKit (from `../`)
+
+EXTERNAL SOURCES:
+  DPAdapterKit:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  DPAdapterKit: 29e3d98f2dec1a3b919aca7be829ea337663c950
+
+PODFILE CHECKSUM: 0eed0a16a39205149f3cd016a030687106fb881d
+
+COCOAPODS: 1.8.4
