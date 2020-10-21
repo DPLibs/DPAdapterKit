@@ -31,7 +31,7 @@
 		286AE7E49CC403510D0DD02EE354B97E /* ImagePrefetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = E783C27CCAD76BC17FCECAE8777E6EF8 /* ImagePrefetcher.swift */; };
 		2A1C3B11E9B63C6B8DD90D7F715966B7 /* Indicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EDB29752DA6E587EAE566AA457225BF /* Indicator.swift */; };
 		2A47C7AA7F44670DDFDEB6EE598E2FC3 /* StyleWrapper+UITableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250A414AE4AE223524A7DA052D564E3E /* StyleWrapper+UITableCell.swift */; };
-		2A4BFACDCF1BF2488DE5D742D4ADD1F5 /* PageViewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D3CB1045E59D4C003F0F73DB8070A6 /* PageViewAdapter.swift */; };
+		2A4BFACDCF1BF2488DE5D742D4ADD1F5 /* PageViewControllerAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D3CB1045E59D4C003F0F73DB8070A6 /* PageViewControllerAdapter.swift */; };
 		2B4EAB55F4CB06BA0725E22B52C3AD55 /* String+Capitalize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A8D163D486244E9862F50393297607 /* String+Capitalize.swift */; };
 		2CEC19B00AD6F128E0C7E9A8D64BE594 /* PlayState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE63C857E9759E9A4A5ABB781522586 /* PlayState.swift */; };
 		32A6B8F881A669D883CDCDD11835D1F0 /* UIImage+Rounded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4425A80827252FA78B0D7BBC3E7277CC /* UIImage+Rounded.swift */; };
@@ -254,7 +254,7 @@
 		315BCF9F01271A195A40414C0F650BD0 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Accelerate.framework; sourceTree = DEVELOPER_DIR; };
 		315C9DC9341FD5CE1371DEAF5E0845F9 /* AVAssetImageDataProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AVAssetImageDataProvider.swift; path = Sources/General/ImageSource/AVAssetImageDataProvider.swift; sourceTree = "<group>"; };
 		32005F7FEFBC13F3968DFDEAF934B2D0 /* UIButton+Kingfisher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIButton+Kingfisher.swift"; path = "Sources/Extensions/UIButton+Kingfisher.swift"; sourceTree = "<group>"; };
-		3583A7496392B7E6B1D30754A4EB4CB9 /* DPAdapterKit.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = DPAdapterKit.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		3583A7496392B7E6B1D30754A4EB4CB9 /* DPAdapterKit.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = DPAdapterKit.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		36A82E29A2225CAC05BC9F9DB80F4F38 /* Array+RemoveAll.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Array+RemoveAll.swift"; path = "DPLibrary/Extensions/Array+RemoveAll.swift"; sourceTree = "<group>"; };
 		36B632EF84F44FF649907D7A12A7E33B /* Pods-DPAdapterKit_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-DPAdapterKit_Example-dummy.m"; sourceTree = "<group>"; };
 		36FDF42D9CBB695378C4BADC80BA90B4 /* StyleWrapper+UINavigationBar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "StyleWrapper+UINavigationBar.swift"; path = "DPLibrary/StyleWrapper/StyleWrapper+UINavigationBar.swift"; sourceTree = "<group>"; };
@@ -274,7 +274,7 @@
 		4FB836B7FEA22CF73E6673C4BAD176D5 /* ImageTransition.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageTransition.swift; path = Sources/Image/ImageTransition.swift; sourceTree = "<group>"; };
 		51515414AE1A991667A33FAFEAFAA766 /* Pods-DPAdapterKit_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DPAdapterKit_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		54F63171F6CB66B8D97168CEED8DB8DC /* Placeholder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Placeholder.swift; path = Sources/Image/Placeholder.swift; sourceTree = "<group>"; };
-		55DD4C22BB5265B8984CD2D3E9942793 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		55DD4C22BB5265B8984CD2D3E9942793 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		5623E7FE0870B073FC99CDB38FAF49A6 /* KeychainSwiftAccessOptions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KeychainSwiftAccessOptions.swift; path = Sources/KeychainSwiftAccessOptions.swift; sourceTree = "<group>"; };
 		57A8D163D486244E9862F50393297607 /* String+Capitalize.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "String+Capitalize.swift"; path = "DPLibrary/Extensions/String+Capitalize.swift"; sourceTree = "<group>"; };
 		596804FDDA88CDAE224DFA55EC39A799 /* Pods-DPAdapterKit_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-DPAdapterKit_Example-umbrella.h"; sourceTree = "<group>"; };
@@ -290,8 +290,8 @@
 		6AD72D35547BD2647AD939FAA03F9A58 /* KeychainSwift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "KeychainSwift-umbrella.h"; sourceTree = "<group>"; };
 		6BB46CA266E53AF3D4CD66BDDF6E13A1 /* UITableView+RegisterCellNibs.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UITableView+RegisterCellNibs.swift"; path = "DPLibrary/Extensions/UITableView+RegisterCellNibs.swift"; sourceTree = "<group>"; };
 		6D6F61F6E98640516AF0878E3DE72065 /* StyleWrapper+UIImageView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "StyleWrapper+UIImageView.swift"; path = "DPLibrary/StyleWrapper/StyleWrapper+UIImageView.swift"; sourceTree = "<group>"; };
-		70D2EFACB499DA92AD3C6B5343E757FB /* DPAdapterKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = DPAdapterKit.framework; path = DPAdapterKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		72F0DE0230CB528CDD5FC9642B4072EB /* Pods_DPAdapterKit_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_DPAdapterKit_Example.framework; path = "Pods-DPAdapterKit_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		70D2EFACB499DA92AD3C6B5343E757FB /* DPAdapterKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DPAdapterKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		72F0DE0230CB528CDD5FC9642B4072EB /* Pods_DPAdapterKit_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DPAdapterKit_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		72F65D6D7A3FDFC2EF05922D04CDCEC9 /* DPLoggable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DPLoggable.swift; path = DPLibrary/DPLoggable.swift; sourceTree = "<group>"; };
 		762C10E3F8EC0924D895E905B0864E49 /* AppServerConfiguration.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AppServerConfiguration.swift; path = DPLibrary/AppServerConfiguration.swift; sourceTree = "<group>"; };
 		77088C846A228F5D369F30D492EE864D /* ImageDownloader.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageDownloader.swift; path = Sources/Networking/ImageDownloader.swift; sourceTree = "<group>"; };
@@ -309,12 +309,12 @@
 		990CA78D312EA0BAA1464A148ED1DD31 /* Delegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Delegate.swift; path = Sources/Utility/Delegate.swift; sourceTree = "<group>"; };
 		9B5CDB29823B5122C8CB72073E674C55 /* StyleWrapper+UIButton+Props.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "StyleWrapper+UIButton+Props.swift"; path = "DPLibrary/StyleWrapper/StyleWrapper+UIButton+Props.swift"; sourceTree = "<group>"; };
 		9BE63C857E9759E9A4A5ABB781522586 /* PlayState.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PlayState.swift; path = DPLibrary/PlayState.swift; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9DC3276EA04B5A94C94111195ACCECE1 /* NSMutableAttributedString+Create.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSMutableAttributedString+Create.swift"; path = "DPLibrary/Extensions/NSMutableAttributedString+Create.swift"; sourceTree = "<group>"; };
-		9E0FD012ADC3C7179C684035672383E5 /* KeychainSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = KeychainSwift.framework; path = KeychainSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9E0FD012ADC3C7179C684035672383E5 /* KeychainSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KeychainSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E53F5375B86CC2CC4B1FFA8EE0CAAAB /* Kingfisher.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Kingfisher.modulemap; sourceTree = "<group>"; };
 		9EF945886F0EAC2C3EB10237F5350576 /* KeychainSwift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "KeychainSwift-dummy.m"; sourceTree = "<group>"; };
-		9F7740B2EDF35C44A22901347A103F5A /* DPLibrary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = DPLibrary.framework; path = DPLibrary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F7740B2EDF35C44A22901347A103F5A /* DPLibrary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DPLibrary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A026244DF62EB6A5489BF34EE1E95372 /* StyleWrapper+UICollectionView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "StyleWrapper+UICollectionView.swift"; path = "DPLibrary/StyleWrapper/StyleWrapper+UICollectionView.swift"; sourceTree = "<group>"; };
 		A1029E239B03CBEA7EF410084333E450 /* Kingfisher-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Kingfisher-umbrella.h"; sourceTree = "<group>"; };
 		A618116036402DCC6FA4D667DFE186BF /* FormatIndicatedCacheSerializer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FormatIndicatedCacheSerializer.swift; path = Sources/Cache/FormatIndicatedCacheSerializer.swift; sourceTree = "<group>"; };
@@ -332,8 +332,8 @@
 		B939AC1EF1F63A24EC64C8B84A2B0D48 /* KingfisherManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KingfisherManager.swift; path = Sources/General/KingfisherManager.swift; sourceTree = "<group>"; };
 		BB070D4373D4BEDF7539A2824A8B07B0 /* SizeExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SizeExtensions.swift; path = Sources/Utility/SizeExtensions.swift; sourceTree = "<group>"; };
 		BB0F26CF4C588885CF689D344EF98025 /* StyleWrapper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StyleWrapper.swift; path = DPLibrary/StyleWrapper/StyleWrapper.swift; sourceTree = "<group>"; };
-		BF7EF32B9BA30A7B8BB584DEF58E9119 /* Pods_DPAdapterKit_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_DPAdapterKit_Tests.framework; path = "Pods-DPAdapterKit_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		C3F44C782D64D7EB20B61CE3844EBFAD /* Kingfisher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Kingfisher.framework; path = Kingfisher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF7EF32B9BA30A7B8BB584DEF58E9119 /* Pods_DPAdapterKit_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DPAdapterKit_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C3F44C782D64D7EB20B61CE3844EBFAD /* Kingfisher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Kingfisher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7E2BBE2F19EDC52EBA4CC78868B3145 /* ImageProgressive.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageProgressive.swift; path = Sources/Image/ImageProgressive.swift; sourceTree = "<group>"; };
 		CE0EC3933E632CB2C760767BD2B6431D /* Pods-DPAdapterKit_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-DPAdapterKit_Example-frameworks.sh"; sourceTree = "<group>"; };
 		CE15B5609B29AA536146CF1DF8AD31C0 /* DPLibrary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DPLibrary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -359,12 +359,12 @@
 		E6412F3C93A225B65F05435CD9C6BE1F /* DiskStorage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DiskStorage.swift; path = Sources/Cache/DiskStorage.swift; sourceTree = "<group>"; };
 		E75B53C0052F0D6E932B67F08E2E066E /* StyleWrapper+UIScrollView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "StyleWrapper+UIScrollView.swift"; path = "DPLibrary/StyleWrapper/StyleWrapper+UIScrollView.swift"; sourceTree = "<group>"; };
 		E783C27CCAD76BC17FCECAE8777E6EF8 /* ImagePrefetcher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImagePrefetcher.swift; path = Sources/Networking/ImagePrefetcher.swift; sourceTree = "<group>"; };
-		E9D3CB1045E59D4C003F0F73DB8070A6 /* PageViewAdapter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PageViewAdapter.swift; path = DPAdapterKit/PageViewAdapter.swift; sourceTree = "<group>"; };
+		E9D3CB1045E59D4C003F0F73DB8070A6 /* PageViewControllerAdapter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PageViewControllerAdapter.swift; path = DPAdapterKit/PageViewControllerAdapter.swift; sourceTree = "<group>"; };
 		EB1F22CBD50FA30B37E742C5793B8084 /* StyleWrapper+UISwitch.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "StyleWrapper+UISwitch.swift"; path = "DPLibrary/StyleWrapper/StyleWrapper+UISwitch.swift"; sourceTree = "<group>"; };
 		EBEED6838E20B5094ED2311FF0FB0B0F /* KeychainSwift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "KeychainSwift-prefix.pch"; sourceTree = "<group>"; };
 		EE866EA0EDB17F139527623D8085EE2A /* GIFAnimatedImage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GIFAnimatedImage.swift; path = Sources/Image/GIFAnimatedImage.swift; sourceTree = "<group>"; };
 		EE93ABF342A98C62747D16A5F974D2C3 /* DPLibrary-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "DPLibrary-Info.plist"; sourceTree = "<group>"; };
-		EFA88E1E729E0E31D4ACAFFF6198198B /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		EFA88E1E729E0E31D4ACAFFF6198198B /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		EFE619ACFE73EEE344780DF94214BE85 /* SessionDataTask.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SessionDataTask.swift; path = Sources/Networking/SessionDataTask.swift; sourceTree = "<group>"; };
 		F0748234931498A94834683A1139AFA4 /* Environment.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Environment.swift; path = DPLibrary/Environment.swift; sourceTree = "<group>"; };
 		F176BE9986CB2839C20086A05F1FF827 /* Array+AppendUnique.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Array+AppendUnique.swift"; path = "DPLibrary/Extensions/Array+AppendUnique.swift"; sourceTree = "<group>"; };
@@ -530,7 +530,6 @@
 				DE02882DDBAAFC6B56A7663E6C6C72AD /* UIViewController+Keyboard.swift */,
 				B62106F6871BFAD2B1863B7E66286781 /* Support Files */,
 			);
-			name = DPLibrary;
 			path = DPLibrary;
 			sourceTree = "<group>";
 		};
@@ -614,7 +613,6 @@
 				A9EC216F87CB269D6B4AB33B5C288913 /* Core */,
 				7D2580E7560C7254539063338A228EE8 /* Support Files */,
 			);
-			name = Kingfisher;
 			path = Kingfisher;
 			sourceTree = "<group>";
 		};
@@ -705,7 +703,7 @@
 		DA8C14AD4B420E7EF2FA0C9B86E62901 /* DPAdapterKit */ = {
 			isa = PBXGroup;
 			children = (
-				E9D3CB1045E59D4C003F0F73DB8070A6 /* PageViewAdapter.swift */,
+				E9D3CB1045E59D4C003F0F73DB8070A6 /* PageViewControllerAdapter.swift */,
 				7A16899F09C577035B72422F756A24B1 /* Pod */,
 				03A060E2467B5260F05E89FCBCD2D5EA /* Support Files */,
 			);
@@ -721,7 +719,6 @@
 				3032CF9C6D078399C2169F4D88F876F1 /* TegKeychainConstants.swift */,
 				6952C02BCADFEE34A518F318F188B808 /* Support Files */,
 			);
-			name = KeychainSwift;
 			path = KeychainSwift;
 			sourceTree = "<group>";
 		};
@@ -1135,7 +1132,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				67C10C83DAED14E2E4004F037F1E9B4F /* DPAdapterKit-dummy.m in Sources */,
-				2A4BFACDCF1BF2488DE5D742D4ADD1F5 /* PageViewAdapter.swift in Sources */,
+				2A4BFACDCF1BF2488DE5D742D4ADD1F5 /* PageViewControllerAdapter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1752,8 +1749,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
