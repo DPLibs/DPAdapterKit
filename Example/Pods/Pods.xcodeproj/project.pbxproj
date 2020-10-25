@@ -122,6 +122,7 @@
 		DA2C93E9042F891D3F9BA1880C7B323E /* StyleWrapper+UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6F61F6E98640516AF0878E3DE72065 /* StyleWrapper+UIImageView.swift */; };
 		DA834ABF4D4C1BA0185D020332B151F0 /* RedirectHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265C12E7559CC336F54CAA65D43ADB0B /* RedirectHandler.swift */; };
 		DF465887FE1782A201763D9FA5374561 /* KeychainSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9907625948CF1FF2169DD899169462F5 /* KeychainSwift.framework */; };
+		E2F963A12545DD1000DFE444 /* SearchBarAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F963A02545DD1000DFE444 /* SearchBarAdapter.swift */; };
 		E36624503C5C81CC548C56F65FDEA7F2 /* RetryStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE84AF39E53D51BA2D3E11D82C470AD /* RetryStrategy.swift */; };
 		E9838166C8919D57F98C1C62286FC68D /* StyleWrapper+UITabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13297A56117D4235C60386B745FBA0F3 /* StyleWrapper+UITabBar.swift */; };
 		EB5E702AF1278828D8F28BBDA16C1319 /* UIViewController+Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE02882DDBAAFC6B56A7663E6C6C72AD /* UIViewController+Keyboard.swift */; };
@@ -351,6 +352,7 @@
 		DE02882DDBAAFC6B56A7663E6C6C72AD /* UIViewController+Keyboard.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIViewController+Keyboard.swift"; path = "DPLibrary/Extensions/UIViewController+Keyboard.swift"; sourceTree = "<group>"; };
 		DEED3B635E233BA90CBEA4C627515355 /* DPLibrary-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "DPLibrary-dummy.m"; sourceTree = "<group>"; };
 		DF6D3C4E85B9F3D4B5F6975360E91792 /* Array+RemoveDuplicate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Array+RemoveDuplicate.swift"; path = "DPLibrary/Extensions/Array+RemoveDuplicate.swift"; sourceTree = "<group>"; };
+		E2F963A02545DD1000DFE444 /* SearchBarAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchBarAdapter.swift; path = DPAdapterKit/SearchBarAdapter.swift; sourceTree = "<group>"; };
 		E30375DFC0270C8FFC1ED276EDB02CDA /* Box.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Box.swift; path = Sources/Utility/Box.swift; sourceTree = "<group>"; };
 		E39DAE197977A4D7B7A2146A9C766050 /* Pods-DPAdapterKit_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-DPAdapterKit_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		E436DF9CAB284575923B8E8B74C77461 /* Pods-DPAdapterKit_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-DPAdapterKit_Tests-frameworks.sh"; sourceTree = "<group>"; };
@@ -703,6 +705,7 @@
 		DA8C14AD4B420E7EF2FA0C9B86E62901 /* DPAdapterKit */ = {
 			isa = PBXGroup;
 			children = (
+				E2F963A02545DD1000DFE444 /* SearchBarAdapter.swift */,
 				E9D3CB1045E59D4C003F0F73DB8070A6 /* PageViewControllerAdapter.swift */,
 				7A16899F09C577035B72422F756A24B1 /* Pod */,
 				03A060E2467B5260F05E89FCBCD2D5EA /* Support Files */,
@@ -1131,6 +1134,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2F963A12545DD1000DFE444 /* SearchBarAdapter.swift in Sources */,
 				67C10C83DAED14E2E4004F037F1E9B4F /* DPAdapterKit-dummy.m in Sources */,
 				2A4BFACDCF1BF2488DE5D742D4ADD1F5 /* PageViewControllerAdapter.swift in Sources */,
 			);
