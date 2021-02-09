@@ -52,6 +52,8 @@ open class SearchBarAdapter: NSObject, UISearchBarDelegate {
     private let withCancelBtn: Bool
     private let delayTextDidChange: TimeInterval
     
+    private let alwaysAllowedCharacters: [String] = ["\n"]
+    
     private var timer: Timer?
     
     // MARK: - Public methods
@@ -77,33 +79,33 @@ open class SearchBarAdapter: NSObject, UISearchBarDelegate {
     }
     
     // MARK: - UISearchBarDelegate
-    public func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+    open func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
         guard self.withCancelBtn else { return }
         self._setShowsCancelButton(true)
     }
     
-    public func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+    open func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
         self._setShowsCancelButton(false)
     }
     
-    public func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+    open func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         self._endEditing()
         self.output?.tapSearchButton(self, value: searchBar.text)
         self.provideTextDidChange(value: searchBar.text)
     }
 
-    public func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+    open func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         self.provideTextDidChange(value: searchBar.text)
     }
 
-    public func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+    open func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         self._setShowsCancelButton(false)
         self._endEditing()
         self.output?.tapCancelButton(self)
     }
     
-    public func searchBar(_ searchBar: UISearchBar, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
-        guard let textMaxLength = self.textMaxLength  else { return true }
+    open func searchBar(_ searchBar: UISearchBar, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        guard let textMaxLength = self.textMaxLength, !self.alwaysAllowedCharacters.contains(text)  else { return true }
         let count: Int = (searchBar.text as NSString?)?.replacingCharacters(in: range, with: text).count ?? 0
         let maxCountNotAchived = count <= textMaxLength
         self.output?.textMaxLengthAchived(self, textMaxLength: textMaxLength, isAchived: !maxCountNotAchived)
