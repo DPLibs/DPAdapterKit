@@ -1,13 +1,13 @@
 PODS:
-  - DPAdapterKit (1.1.0):
+  - DPAdapterKit (1.2.0):
     - DPLibrary
-  - DPLibrary (1.4.1):
+  - DPLibrary (1.5.0):
     - KeychainSwift (~> 19.0)
     - Kingfisher (~> 5.15.6)
   - KeychainSwift (19.0.0)
-  - Kingfisher (5.15.6):
-    - Kingfisher/Core (= 5.15.6)
-  - Kingfisher/Core (5.15.6)
+  - Kingfisher (5.15.8):
+    - Kingfisher/Core (= 5.15.8)
+  - Kingfisher/Core (5.15.8)
 
 DEPENDENCIES:
   - DPAdapterKit (from `../`)
@@ -24,10 +24,10 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  DPAdapterKit: 8889bdb01362bd1f361ca6737a09e2399f848dcc
-  DPLibrary: 4f71d2791add723c4673c6edc795bb6716aac7e8
+  DPAdapterKit: 1265f6807cb65c2e265b98c41ce83f7a1ca92449
+  DPLibrary: 2423ab76dfd4b0b6adbf56b262f36c3ef7d06759
   KeychainSwift: a06190cf933ad46b1e0abc3d77d29c06331715c7
-  Kingfisher: b3554e7bf6106115b44e8795300bad580ef2fdc7
+  Kingfisher: a3c03d702433fa6cfedabb2bddbe076fb8f2e902
 
 PODFILE CHECKSUM: ef5a3e5d9c4d32cfa15cc4f04ff11e28156f74e2
 

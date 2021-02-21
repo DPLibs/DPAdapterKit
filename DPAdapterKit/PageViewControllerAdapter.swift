@@ -114,7 +114,7 @@ open class PageViewControllerAdapter: NSObject, PageViewControllerAdapterInput, 
 
 
     open func removePages(_ indices: [Int]) {
-        _ = self.pages.removeAll(indices: indices)
+        self.pages.removeAll(at: indices)
         guard !self.pages.isEmpty else { return }
         if self.pages.indices.contains(self._currentPageIndex) {
             self.showCurrentPageIndex(self._currentPageIndex)
