@@ -2,50 +2,41 @@ import Foundation
 import UIKit
 import DPLibrary
 
-// MARK: - PageViewControllerAdapterInput
+// MARK: - Input
 public protocol PageViewControllerAdapterInput: AnyObject {
-    var pageViewController: UIPageViewController? { get set }
     var output: PageViewControllerAdapterOutput? { get set }
     var pages: [UIViewController] { get set }
     var swipeIsEnabled: Bool { get set }
     var currentPageIndex: Int { get }
-    
-    func createPageViewControllerAndAddToSuperview(_ superview: UIView?, parent: UIViewController?, transitionStyle: UIPageViewController.TransitionStyle, navigationOrientation: UIPageViewController.NavigationOrientation)
-    func showCurrentPageIndex(_ currentPageIndex: Int)
-    func showReversePage()
-    func showForwardPage()
-    func removePages(_ indices: [Int])
+
+    func showPage(at index: Int)
+    func showPageReverse()
+    func showPageForward()
+    func removePages(at indices: [Int])
 }
 
-// MARK: - PageViewControllerAdapterOutput
+// MARK: - Output
 public protocol PageViewControllerAdapterOutput: AnyObject {
-    func didSelectCurrentPageIndex(_ adapter: PageViewControllerAdapter, currentPageIndex: Int)
-    func didPages(_ adapter: PageViewControllerAdapter, pages: [UIViewController])
-    func didLimitPageReached(_ adapter: PageViewControllerAdapter, for direction: UIPageViewController.NavigationDirection, fromSwipe: Bool)
+    func didSelectPage(_ adapter: PageViewControllerAdapterInput, at index: Int)
+    func didSetPages(_ adapter: PageViewControllerAdapterInput, pages: [UIViewController])
+    func didPageLimitReached(_ adapter: PageViewControllerAdapterInput, for direction: UIPageViewController.NavigationDirection, fromSwipe: Bool)
 }
 
 public extension PageViewControllerAdapterOutput {
-    func didSelectCurrentPageIndex(_ adapter: PageViewControllerAdapter, currentPageIndex: Int) {}
-    func didPages(_ adapter: PageViewControllerAdapter, pages: [UIViewController]) {}
-    func didLimitPageReached(_ adapter: PageViewControllerAdapter, for direction: UIPageViewController.NavigationDirection, fromSwipe: Bool) {}
+    func didSelectPage(_ adapter: PageViewControllerAdapterInput, at index: Int) {}
+    func didSetPages(_ adapter: PageViewControllerAdapterInput, pages: [UIViewController]) {}
+    func didPageLimitReached(_ adapter: PageViewControllerAdapterInput, for direction: UIPageViewController.NavigationDirection, fromSwipe: Bool) {}
 }
 
-// MARK: - PageViewControllerAdapter
-open class PageViewControllerAdapter: NSObject, PageViewControllerAdapterInput, UIPageViewControllerDelegate, UIPageViewControllerDataSource {
+open class PageViewControllerAdapter: UIPageViewController, UIPageViewControllerDelegate, UIPageViewControllerDataSource, PageViewControllerAdapterInput {
     
     // MARK: - Props
-    public weak var pageViewController: UIPageViewController? {
-        didSet {
-            self.pageViewController?.delegate = self
-        }
-    }
+    open weak var output: PageViewControllerAdapterOutput?
     
-    public weak var output: PageViewControllerAdapterOutput?
-    
-    public var pages: [UIViewController] = [] {
+    open var pages: [UIViewController] = [] {
         didSet {
-            self.output?.didPages(self, pages: self.pages)
-            self.showCurrentPageIndex(self._currentPageIndex)
+            self.output?.didSetPages(self, pages: self.pages)
+            self.showPage(at: self._currentPageIndex)
         }
     }
     
@@ -54,103 +45,139 @@ open class PageViewControllerAdapter: NSObject, PageViewControllerAdapterInput, 
             self._swipeIsEnabledDidSet()
         }
     }
-    
+
     public var currentPageIndex: Int {
         self._currentPageIndex
     }
-    
+
     private var _currentPageIndex: Int = 0
     
-    // MARK: - Public
-    open func createPageViewControllerAndAddToSuperview(_ superview: UIView?, parent: UIViewController?, transitionStyle: UIPageViewController.TransitionStyle = .scroll, navigationOrientation: UIPageViewController.NavigationOrientation = .horizontal) {
+    // MARK: - Init
+    public override init(
+        transitionStyle style: UIPageViewController.TransitionStyle,
+        navigationOrientation: UIPageViewController.NavigationOrientation,
+        options: [UIPageViewController.OptionsKey: Any]? = nil
+    ) {
+        super.init(transitionStyle: style, navigationOrientation: navigationOrientation, options: options)
+        
+        self.setupComponets()
+    }
+    
+    required public init?(coder: NSCoder) {
+        super.init(coder: coder)
+        
+        self.setupComponets()
+    }
+    
+    // MARK: - Methods
+    open func setupComponets() {
+        self.delegate = self
+    }
+
+    open func appendToSuperview(_ superview: UIView?, parentViewController parent: UIViewController?) {
         guard let superview = superview else { return }
         
-        let pageViewController = UIPageViewController(transitionStyle: transitionStyle, navigationOrientation: navigationOrientation, options: nil)
-        superview.addSubview(pageViewController.view)
-        pageViewController.view.translatesAutoresizingMaskIntoConstraints = false
+        self.view.translatesAutoresizingMaskIntoConstraints = false
+        superview.addSubview(self.view)
+        
         NSLayoutConstraint.activate([
-            pageViewController.view.topAnchor.constraint(equalTo: superview.topAnchor),
-            pageViewController.view.bottomAnchor.constraint(equalTo: superview.bottomAnchor),
-            pageViewController.view.leadingAnchor.constraint(equalTo: superview.leadingAnchor),
-            pageViewController.view.trailingAnchor.constraint(equalTo: superview.trailingAnchor)
+            self.view.topAnchor.constraint(equalTo: superview.topAnchor),
+            self.view.bottomAnchor.constraint(equalTo: superview.bottomAnchor),
+            self.view.leadingAnchor.constraint(equalTo: superview.leadingAnchor),
+            self.view.trailingAnchor.constraint(equalTo: superview.trailingAnchor)
         ])
-        parent?.addChild(pageViewController)
         
-        self.pageViewController = pageViewController
+        parent?.addChild(self)
+
         self._swipeIsEnabledDidSet()
-        self.showCurrentPageIndex(self._currentPageIndex)
+        self.showPage(at: self._currentPageIndex)
     }
-    
-    open func showCurrentPageIndex(_ currentPageIndex: Int) {
-        guard self.pages.indices.contains(currentPageIndex) else { return }
-        
-        let controller = self.pages[currentPageIndex]
-        let direction: UIPageViewController.NavigationDirection = currentPageIndex >= self._currentPageIndex ? .forward : .reverse
-        self._currentPageIndex = currentPageIndex
-        
-        self.pageViewController?.setViewControllers([controller], direction: direction, animated: true, completion: { [weak self] completed in
+
+    open func showPage(at index: Int) {
+        guard self.pages.indices.contains(index) else { return }
+
+        let controller = self.pages[index]
+        let direction: UIPageViewController.NavigationDirection = index >= self._currentPageIndex ? .forward : .reverse
+        self._currentPageIndex = index
+
+        self.setViewControllers([controller], direction: direction, animated: true, completion: { [weak self] completed in
             guard let self = self, completed else { return }
-            self.output?.didSelectCurrentPageIndex(self, currentPageIndex: self._currentPageIndex)
+            
+            self.output?.didSelectPage(self, at: self._currentPageIndex)
         })
     }
-    
-    open func showReversePage() {
-        let newCurrent = self._currentPageIndex - 1
-        guard self.pages.indices.contains(newCurrent) else {
-            self.output?.didLimitPageReached(self, for: .reverse, fromSwipe: false)
+
+    open func showPageReverse() {
+        let index = self._currentPageIndex - 1
+        
+        guard self.pages.indices.contains(index) else {
+            self.output?.didPageLimitReached(self, for: .reverse, fromSwipe: false)
             return
         }
-        self.showCurrentPageIndex(newCurrent)
+        
+        self.showPage(at: index)
     }
 
-    open func showForwardPage() {
-        let newCurrent = self._currentPageIndex + 1
-        guard self.pages.indices.contains(newCurrent) else {
-            self.output?.didLimitPageReached(self, for: .forward, fromSwipe: false)
+    open func showPageForward() {
+        let index = self._currentPageIndex + 1
+        
+        guard self.pages.indices.contains(index) else {
+            self.output?.didPageLimitReached(self, for: .forward, fromSwipe: false)
             return
         }
-        self.showCurrentPageIndex(newCurrent)
+        
+        self.showPage(at: index)
     }
 
-
-    open func removePages(_ indices: [Int]) {
+    open func removePages(at indices: [Int]) {
         self.pages.removeAll(at: indices)
         guard !self.pages.isEmpty else { return }
-        if self.pages.indices.contains(self._currentPageIndex) {
-            self.showCurrentPageIndex(self._currentPageIndex)
-        }
-        else {
-            self.showCurrentPageIndex(self.pages.endIndex)
-        }
+        
+        let index = self.pages.indices.contains(self._currentPageIndex) ? self._currentPageIndex : self.pages.count
+        self.showPage(at: index)
+    }
+    
+    // MARK: - Private
+    private func _swipeIsEnabledDidSet() {
+        self.dataSource = self.swipeIsEnabled ? self : nil
     }
     
     // MARK: - UIPageViewControllerDelegate
-    public func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
+    public func pageViewController(
+        _ pageViewController: UIPageViewController,
+        didFinishAnimating finished: Bool,
+        previousViewControllers: [UIViewController],
+        transitionCompleted completed: Bool
+    ) {
         guard let index = self.pages.firstIndex(where: { $0 == pageViewController.viewControllers?.first }) else { return }
         self._currentPageIndex = index
-        self.output?.didSelectCurrentPageIndex(self, currentPageIndex: index)
+        
+        self.output?.didSelectPage(self, at: index)
     }
     
     // MARK: - UIPageViewControllerDataSource
-    public func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
+    public func pageViewController(
+        _ pageViewController: UIPageViewController,
+        viewControllerBefore viewController: UIViewController
+    ) -> UIViewController? {
         guard let index = self.pages.firstIndex(where: { $0 == viewController }), self.pages.indices.contains(index - 1) else {
-            self.output?.didLimitPageReached(self, for: .reverse, fromSwipe: true)
+            self.output?.didPageLimitReached(self, for: .reverse, fromSwipe: true)
             return nil
         }
+        
         return self.pages[index - 1]
     }
 
-    public func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
+    public func pageViewController(
+        _ pageViewController: UIPageViewController,
+        viewControllerAfter viewController: UIViewController
+    ) -> UIViewController? {
         guard let index = self.pages.firstIndex(where: { $0 == viewController }), self.pages.indices.contains(index + 1) else {
-            self.output?.didLimitPageReached(self, for: .forward, fromSwipe: true)
+            self.output?.didPageLimitReached(self, for: .forward, fromSwipe: true)
             return nil
         }
+        
         return self.pages[index + 1]
     }
-
-    // MARK: - Private
-    private func _swipeIsEnabledDidSet() {
-        self.pageViewController?.dataSource = self.swipeIsEnabled ? self : nil
-    }
+    
 }
-

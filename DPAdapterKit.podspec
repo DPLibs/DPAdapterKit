@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'DPAdapterKit'
-  s.version          = '1.2.1'
+  s.version          = '2.0.0'
   s.summary          = 'DP Adapter Kit'
   s.description      = 'A set of useful utilities'
   s.homepage         = 'https://github.com/DPLibs/DPAdapterKit'
