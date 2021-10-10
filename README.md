@@ -4,7 +4,7 @@
 [![License](https://img.shields.io/cocoapods/l/DPAdapterKit.svg?style=flat)](https://cocoapods.org/pods/DPAdapterKit)
 [![Platform](https://img.shields.io/cocoapods/p/DPAdapterKit.svg?style=flat)](https://cocoapods.org/pods/DPAdapterKit)
 
-Library deprecated. Use [![DPUIKit](https://github.com/DPLibs/DPUIKit)
+Library deprecated. Use [DPUIKit](https://github.com/DPLibs/DPUIKit)
 
 ## Example
 
